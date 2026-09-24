@@ -4,5 +4,6 @@
   "browser": {"engine": "Chrome", "seeded_history_and_report": "passed", "live_submission": "passed", "live_evidence_file": "ui-live-verification.json", "mobile_width": 390, "horizontal_overflow": false, "page_errors": 0},
   "evaluation_file": "evaluation.json",
   "live_public_review": "live_review.json",
+  "github_publication": "Blocked before execution by automatic approval review; explicit destination approval requested",
   "unverified": ["Docker builds and actual test execution", "PostgreSQL service", "Live LLM provider", "Private GitHub access", "Production hosting", "GitHub push"]
 }

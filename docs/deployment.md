@@ -68,6 +68,10 @@ Use TLS and an authenticated gateway if sharing widely. A shared bearer token is
 
 ## GitHub publishing when authentication is unavailable
 
+For this delivery, a Windows-user credential was found, but automatic approval review blocked the upload
+until explicit approval of the destination. No GitHub repository has been created by this run. The commands
+below are manual alternatives; they have not been executed successfully here.
+
 The requested repository name is `agentic-github-code-reviewer`. From this project root, after installing
 the GitHub CLI and Git on PATH:
 
@@ -88,3 +92,10 @@ git push -u origin main
 
 Do not overwrite an existing remote or force-push. If `origin` already exists, inspect it first. No GitHub
 URL is presented as a created repository until a successful push is verified.
+
+On this Windows workspace, Git was initialized by the sandbox account. If your own terminal reports
+`dubious ownership`, trust only this exact directory before using the manual commands:
+
+```powershell
+git config --global --add safe.directory 'C:/Users/vaibh/Desktop/github analyse agent'
+```

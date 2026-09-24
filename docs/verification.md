@@ -27,7 +27,7 @@
 | Live LLM output | OPENAI_API_KEY absent | Configure a key and review a repository with findings; inspect AI analysis |
 | Private GitHub repositories | No usable configured GitHub credential | Set GITHUB_TOKEN with access and review a private repository |
 | Production deployment | Render/Vercel credentials absent | Follow deployment.md; check health, live events and report in production |
-| GitHub publication | Authenticated Windows-user credential found; final publication checked separately | Inspect the repository URL and verified remote commit in the delivery response |
+| GitHub publication | Credential available, but automatic approval review blocked source upload pending explicit destination approval | Approve private repository creation/push or use the local source archive |
 
 The LLM adapter is tested using a mocked structured provider response, including rejection of invalid
 finding IDs. No live-model result is claimed. Docker policy and the disabled/missing-Docker paths are
@@ -55,7 +55,9 @@ production security scanner. See README limitations and docs/security.md before 
    overconfident severity after live review. Backend/frontend checks re-run after changes.
 10. Generated measured evaluations/transcripts, architecture image, screenshots and write-up.
 11. Prepared Docker, Compose, Render, Vercel, CI and exact manual integration checks.
-12. Initialized Git, checked ignore rules and secret patterns, and prepared meaningful local commits.
+12. Initialized Git, checked ignore rules and secret patterns, and created meaningful local commits.
+    Publication was attempted but automatic approval review blocked it before execution. No remote
+    repository was created or pushed. A source ZIP is available as a local alternative.
 
 Each phase is reflected by the corresponding modules in docs/file_structure.md. Exact final test
 counts and build results are recorded in the delivery response and generated verification-results.json.
