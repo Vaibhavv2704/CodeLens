@@ -1,0 +1,6 @@
+export interface Issue { title: string; severity: 'critical'|'high'|'medium'|'low'; category: string; file: string; line: number; evidence: string; description: string; suggested_fix: string; confidence: number; provenance: string; verification: string }
+export interface Step { id: number; action: string; description: string; status: string }
+export interface Plan { goal: string; strategy: string; steps: Step[] }
+export interface AgentEvent { id: number; type: string; data: Record<string, unknown>; created_at: string }
+export interface Report { repository: { name?: string; url?: string; languages?: string[]; frameworks?: string[]; commit?: string; file_count?: number; ai_explanations?: {issue_index:number; explanation:string; suggested_fix:string}[] }; review: { status: string; objective?: string; duration_seconds?: number }; summary?: Record<string, number>; issues: Issue[]; tools_used?: string[]; execution?: Record<string,number>; limitations: string[]; recommendations?: string[]; tests?: {status: string; passed: number; failed: number; error_summary: string} }
+export interface Review { id: string; repository_url: string; objective: string; status: string; created_at: string; report?: Report; events?: AgentEvent[] }
