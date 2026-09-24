@@ -1,0 +1,60 @@
+{
+  "total_scenarios": 7,
+  "passed": 7,
+  "failed": 0,
+  "recovery_success_rate": 1.0,
+  "average_execution_seconds": 0.12,
+  "number_of_tool_calls": 53,
+  "scope": "Offline synthetic integration evaluation; no Docker or live LLM claims",
+  "scenarios": [
+    {
+      "scenario": "Simple Python repository",
+      "passed": true,
+      "duration_seconds": 0.0458,
+      "tool_calls": 7,
+      "recoveries": 0
+    },
+    {
+      "scenario": "Evidence-backed quality issues",
+      "passed": true,
+      "duration_seconds": 0.0299,
+      "tool_calls": 7,
+      "recoveries": 0
+    },
+    {
+      "scenario": "Failing-test repository (execution blocked without Docker)",
+      "passed": true,
+      "duration_seconds": 0.0274,
+      "tool_calls": 7,
+      "recoveries": 0
+    },
+    {
+      "scenario": "Unsupported Rust repository",
+      "passed": true,
+      "duration_seconds": 0.0152,
+      "tool_calls": 7,
+      "recoveries": 0
+    },
+    {
+      "scenario": "Deliberate test-runner timeout",
+      "passed": true,
+      "duration_seconds": 0.3306,
+      "tool_calls": 9,
+      "recoveries": 1
+    },
+    {
+      "scenario": "Invalid static-analyzer response",
+      "passed": true,
+      "duration_seconds": 0.3532,
+      "tool_calls": 9,
+      "recoveries": 1
+    },
+    {
+      "scenario": "Malicious source path blocked",
+      "passed": true,
+      "duration_seconds": 0.0381,
+      "tool_calls": 7,
+      "recoveries": 1
+    }
+  ]
+}

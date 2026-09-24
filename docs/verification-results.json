@@ -1,0 +1,8 @@
+{
+  "backend": {"pytest_passed": 44, "pytest_failed": 0, "ruff": "passed", "compileall": "passed", "warning": "Starlette TestClient emits an httpx deprecation warning"},
+  "frontend": {"vitest_passed": 4, "vitest_failed": 0, "typescript": "passed", "vite_production_build": "passed"},
+  "browser": {"engine": "Chrome", "seeded_history_and_report": "passed", "live_submission": "passed", "live_evidence_file": "ui-live-verification.json", "mobile_width": 390, "horizontal_overflow": false, "page_errors": 0},
+  "evaluation_file": "evaluation.json",
+  "live_public_review": "live_review.json",
+  "unverified": ["Docker builds and actual test execution", "PostgreSQL service", "Live LLM provider", "Private GitHub access", "Production hosting", "GitHub push"]
+}

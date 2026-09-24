@@ -1,0 +1,83 @@
+{
+  "repository": {
+    "name": "pallets/itsdangerous",
+    "url": "https://github.com/pallets/itsdangerous",
+    "commit": "672971d66a2ef9f85151e53283113f33d642dabd",
+    "branch": "main",
+    "languages": [
+      "Python"
+    ],
+    "frameworks": [],
+    "file_count": 50,
+    "package_manager": "pip",
+    "test_framework": "pytest",
+    "test_files": [
+      "tests/test_itsdangerous/test_encoding.py",
+      "tests/test_itsdangerous/test_serializer.py",
+      "tests/test_itsdangerous/test_signer.py",
+      "tests/test_itsdangerous/test_timed.py",
+      "tests/test_itsdangerous/test_url_safe.py"
+    ],
+    "has_readme": true,
+    "source_bytes": 282547,
+    "ai_explanations": []
+  },
+  "review": {
+    "objective": "Find important code quality and reliability issues.",
+    "status": "completed",
+    "duration_seconds": 3.031
+  },
+  "summary": {
+    "total_issues": 1,
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "issues": [
+    {
+      "title": "Broad exception handler with empty body",
+      "severity": "medium",
+      "category": "reliability",
+      "file": "src/itsdangerous/timed.py",
+      "line": 114,
+      "evidence": "except Exception:",
+      "description": "This handler catches every Exception and does nothing locally. Surrounding control flow may intentionally handle the failure; inspect that context before changing it.",
+      "suggested_fix": "Consider catching specific failures; document intentional suppression or preserve error context.",
+      "confidence": 0.8,
+      "provenance": "observed_by_tool",
+      "verification": "potential"
+    }
+  ],
+  "tests": {
+    "status": "blocked",
+    "passed": 0,
+    "failed": 0,
+    "duration": 0,
+    "error_summary": "Docker execution disabled; static analysis continues."
+  },
+  "tools_used": [
+    "github",
+    "repository",
+    "static_analysis",
+    "test_runner",
+    "source_inspection",
+    "llm_analysis",
+    "report"
+  ],
+  "execution": {
+    "steps_completed": 5,
+    "tool_failures": 0,
+    "recoveries": 0,
+    "tool_calls": 7,
+    "steps_degraded": 2
+  },
+  "limitations": [
+    "Tests: blocked. Docker execution disabled; static analysis continues.",
+    "Test coverage: Docker execution disabled; static analysis continues.",
+    "LLM key not configured; deterministic findings retained"
+  ],
+  "recommendations": [
+    "Consider catching specific failures; document intentional suppression or preserve error context."
+  ]
+}

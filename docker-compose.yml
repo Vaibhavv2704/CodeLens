@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: reviewer
+      POSTGRES_DB: reviews
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reviewer -d reviews"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://reviewer:${POSTGRES_PASSWORD}@db:5432/reviews
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-gpt-4o-mini}
+      API_TOKEN: ${API_TOKEN:-}
+      ENABLE_SANDBOX: "false"
+      SIMULATE_FAILURE: ${SIMULATE_FAILURE:-false}
+      SIMULATED_FAILURE_TOOL: ${SIMULATED_FAILURE_TOOL:-test_runner}
+    depends_on:
+      db:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports: ["127.0.0.1:5173:8080"]
+    depends_on: [backend]
+volumes:
+  postgres_data:
