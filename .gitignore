@@ -1,0 +1,22 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+node_modules/
+.pnpm-store/
+# Retained output from an early browser check run from the frontend directory.
+/frontend/docs/
+dist/
+*.db
+*.db-*
+.coverage
+coverage/
+test-results/
+playwright-report/
+.DS_Store
+*.log
+*.tsbuildinfo
