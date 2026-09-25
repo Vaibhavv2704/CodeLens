@@ -2,6 +2,9 @@
 
 **An agentic system for repository analysis, evidence-backed code review and observable failure recovery.**
 
+Source: [Vaibhavv2704/agentic-github-code-reviewer](https://github.com/Vaibhavv2704/agentic-github-code-reviewer)
+(private repository; access required).
+
 ![Dashboard](docs/dashboard.png)
 
 ## Overview

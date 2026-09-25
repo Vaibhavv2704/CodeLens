@@ -68,9 +68,9 @@ Use TLS and an authenticated gateway if sharing widely. A shared bearer token is
 
 ## GitHub publishing when authentication is unavailable
 
-For this delivery, a Windows-user credential was found, but automatic approval review blocked the upload
-until explicit approval of the destination. No GitHub repository has been created by this run. The commands
-below are manual alternatives; they have not been executed successfully here.
+This delivery is published at https://github.com/Vaibhavv2704/agentic-github-code-reviewer as a private
+repository. The user explicitly approved publication, and remote main was verified against local HEAD.
+The commands below are alternatives for publishing your own copy; do not recreate the existing repository.
 
 The requested repository name is `agentic-github-code-reviewer`. From this project root, after installing
 the GitHub CLI and Git on PATH:
