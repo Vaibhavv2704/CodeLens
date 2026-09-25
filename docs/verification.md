@@ -15,6 +15,9 @@
   persisted execution events, of `pallets/itsdangerous` at the SHA recorded in
   `live_review.json`. Docker tests were blocked; AI explanation was skipped without a key.
 - Seven measured synthetic evaluation scenarios; see `evaluation.json` for exact counts and timings.
+- GitHub Actions passed backend tests/evaluation, frontend tests/build, and all three Docker image
+  builds on commit `d88f605145a80c3cab9e8e592c7f4fdbf9b2a1a1`:
+  https://github.com/Vaibhavv2704/agentic-github-code-reviewer/actions/runs/36120304400
 - Architecture Mermaid/PNG, three actual synthetic transcripts, README, one-page write-up,
   environment templates, CI, Dockerfiles, Render/Vercel configuration and deployment instructions.
 
@@ -22,7 +25,7 @@
 
 | Integration | Why | How to verify |
 |---|---|---|
-| Real Docker test execution and image builds | Docker engine/CLI absent | Install Docker; follow deployment.md and run good/failing fixtures |
+| Real Docker test execution | Docker engine/CLI absent locally; image builds verified in GitHub Actions | Install Docker; follow deployment.md and run good/failing fixtures |
 | PostgreSQL/Supabase persistence | No service credentials available | Set DATABASE_URL, start backend and run API/health + a review |
 | Live LLM output | OPENAI_API_KEY absent | Configure a key and review a repository with findings; inspect AI analysis |
 | Private GitHub repositories | No usable configured GitHub credential | Set GITHUB_TOKEN with access and review a private repository |

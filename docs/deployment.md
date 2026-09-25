@@ -3,8 +3,9 @@
 ## Current verification boundary
 
 Local Python execution, SQLite persistence, React production assets and a live public GitHub review
-are tested. Docker, PostgreSQL, live LLM/private-repository access and production hosting require the
-services below. Configuration files alone are not a verified deployment.
+are tested. Docker image builds also passed in GitHub Actions. Actual Docker test execution,
+PostgreSQL, live LLM/private-repository access and production hosting require the services below.
+Configuration files and successful image builds alone are not a verified deployment.
 
 ## Local Docker Compose
 
